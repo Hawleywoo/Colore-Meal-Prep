@@ -2,6 +2,7 @@ import './styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Order from './components/Order'
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
-      <div className="delete"></div>
+      <Order />
     </div>
   );
 }

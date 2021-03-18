@@ -20,18 +20,20 @@
   background-size: cover;
   background-attachment: fixed;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
-  margin-bottom: -10vw;
   z-index: 0;
   opacity: .9;
 
     &__title{
+      background-color: hsla(39, 14%, 100%, .3);
+      border-width: 1.5px;
+      border-color: hsla(0, 0%, 56%, .3);
+      color: hsla(0, 0%, 0%, .8);
       position: relative;
       top: 50%;
       z-index: 10;
       width: 44vw;
       border-style: solid;
       border-width: 1.5px;
-      color: hsla(0,0%, 0%, .9);
       letter-spacing: 8px;
       margin: 0 auto;
       padding: 5px 30px;
@@ -77,4 +79,35 @@
       width: 23vw;
     }
 }
+
+.order{
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px hsla(0, 0%, 0%, .8);
+  margin: 0 auto;
+  &__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50vh;
+  }
+}
+
+
+.button{
+  all: unset;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: hsla(39, 14%, 100%, .6);
+  border-color: hsla(39, 14%, 50%, .5);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
 

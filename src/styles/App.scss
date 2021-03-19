@@ -75,27 +75,33 @@
     &__menu{
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: space-between;
       width: 23vw;
 
       &--button{
-        transition: all 1s ease;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        z-index: 100;
       }
 
       &--options{
+        top: 8%;
         position: relative;
-        left: 100%;
+        right: -40%;
+        opacity: 0;
         background-color: transparent;
-        // transition: all .5s ease 1s;
-
+        transition: all 1s ease;
+        
         &--open{
-          z-index: 1;
-          margin-right: 8rem;
+          top: 8%;
+          position: relative;
+          opacity: 1;
+          right: 0%;
+          background-color: transparent;
           padding: 2rem;
           border-radius: 10px;
-          animation-name: moveInLeft;
-          animation-duration: .5s;
-          animation-timing-function: ease-out;
+          transition: all 1s ease;
         }
       }
 

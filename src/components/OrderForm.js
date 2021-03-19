@@ -4,14 +4,14 @@ function OrderForm({ lowCarb }) {
     return (
             <form className="order__form">
                 <label>Number of Meals per Week</label>
-                <select>
+                <select className="order__form--select">
                     <option>5</option>
                     <option>7</option>
                     <option>14</option>
                     <option>21</option>
                 </select>
                 <label>Meal Size</label>
-                <select>
+                <select className="order__form--select">
                     <option>5</option>
                     <option>7</option>
                     <option>14</option>
@@ -19,7 +19,7 @@ function OrderForm({ lowCarb }) {
                     <option></option>
                 </select>
                 <label>Type of Protein</label>
-                <select>
+                <select className="order__form--select">
                     <option>Beef</option>
                     <option>Chicken</option>
                     <option>Pork</option>
@@ -28,7 +28,7 @@ function OrderForm({ lowCarb }) {
                     null :
                     <>
                         <label> Type of Carb</label>
-                        <select>
+                        <select className="order__form--select">
                             <option>Beef</option>
                             <option>Chicken</option>
                             <option>Pork</option>
@@ -36,7 +36,7 @@ function OrderForm({ lowCarb }) {
                     </>
                 }
                 <label>Type of Veggie</label>
-                <select>
+                <select className="order__form--select">
                     <option>Beef</option>
                     <option>Chicken</option>
                     <option>Pork</option>

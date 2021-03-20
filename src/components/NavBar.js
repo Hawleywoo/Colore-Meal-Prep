@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 
 function NavBar() {
-    const [open, setOpen] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false)
 
     const handleClick = () => {
-        setOpen(!open)
+        setOpenMenu(!openMenu)
     }
 
     return (
         <div className="header__menu">
-            <div className={`header__menu--options${open ? '--open' : ''}`}>
+            <div className={`header__menu--options${openMenu ? '--open' : ''}`}>
                 <a>Order</a>
                 <a>About Us</a>
             </div>
-            <div className="header__menu--button" onClick={handleClick}><FaBars /></div>
+            <div className={`header__menu--button`} onClick={handleClick}>
+                <div className='header__menu--button--burger'></div>
+            </div>
         </div>
     )
 }

@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
+import Burger from './Burger'
 
 function NavBar() {
     const [openMenu, setOpenMenu] = useState(false)
 
     const handleClick = () => {
         setOpenMenu(!openMenu)
+        console.log(openMenu)
     }
 
     return (
@@ -14,9 +16,12 @@ function NavBar() {
             <div className={`header__menu--options${openMenu ? '--open' : ''}`}>
                 <a>Order</a>
                 <a>About Us</a>
+                <a>Contact Us</a>
+                <a>Login/Sign Up</a>
             </div>
+
             <div className={`header__menu--button`} onClick={handleClick}>
-                <div className='header__menu--button--burger'></div>
+                <Burger open={openMenu} />
             </div>
         </div>
     )

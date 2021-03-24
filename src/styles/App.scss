@@ -1,4 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
 
 *, 
@@ -52,198 +51,187 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
   z-index: 100;
   color: lightgray;
-    &__wrap{
-      filter: drop-shadow(0px 3px 4px rgba(20, 20, 20, 0.6));
-      position: fixed;
-      z-index: 200;
+
+  &__wrap{
+    filter: drop-shadow(0px 3px 4px rgba(20, 20, 20, 0.6));
+    position: fixed;
+    z-index: 200;
+  }
+
+  &__logo{
+    height: 6vw;
+    width: 10vw;
+
+    &--image{
+      margin-top: 1.5em;
+      margin-left: 1vw;
+      object-fit: cover;
+      object-position: 51% 0%;
+      height: 100%;
+      width: 100%;
     }
+  }
 
-    &__logo{
-      height: 6vw;
-      width: 10vw;
+  &__menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 37vw;
+    font-size: 1.5rem;
 
-      &--image{
-        margin-top: 1.5em;
-        margin-left: 1vw;
-        object-fit: cover;
-        object-position: 51% 0%;
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    &__menu{
+    &--button{
+      position: absolute;
+      top: calc(50% - 2.25rem);
+      right: 5%;
+      background: transparent;
+      height: 2.5em;
+      width: 2.5em;
+      z-index: 10;
+      cursor: pointer;
+      transition: all .5s ease-out;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
+    }
+
+    &--options{
+      top: -2%;
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      right: 0%;
+      opacity: 0;
       width: 30vw;
-      font-size: 1.5rem;
-
-      &--button{
-        position: absolute;
-        top: calc(50% - .75rem);
-        border: solid;
-        border-color: blanchedalmond;
-        height: 3em;
-        width: 3em;
-        right: 5%;
-        z-index: 100;
-        cursor: pointer;
-        transition: all .5s ease-out;
-
-      &--button::before, &--button::after{
-        content: 'main';
-        color: white;
-        position: absolute;
-        z-index: 101;
-        width: 2em;
-        height: 6px;
-        background-color: blanchedalmond;
-        transition: all .5s ease-in-out;
-      }
-
-      &--button::before{
-        content: 'there';
-        width: 2em;
-        height: 6px;
-        background-color: blanchedalmond;
-        transform: translateY(10px);
-      }
-      &--button::after{
-        content: 'hello';
-        width: 2em;
-        height: 6px;
-        background-color: blanchedalmond;
-        transform: translateY(-10px);
-      }
-
-        &--burger{
-          width: 2em;
-          height: 6px;
-          background-color: blanchedalmond;
-          transition: all .5s ease-in-out;
-        }
-      }
-
-      &--options{
-        top: 8%;
-        position: relative;
+      background-color: transparent;
+      transition: all 1s ease;
+      
+      &--open{
         display: flex;
         justify-content: space-evenly;
-        right: 0%;
-        opacity: 0;
-        width: 30vw;
+        top: -2%;
+        position: relative;
+        opacity: 1;
+        right: 22%;
         background-color: transparent;
+        padding: 1rem;
+        width: 25rem;
         transition: all 1s ease;
-
-        
-        &--open{
-          display: flex;
-          justify-content: space-evenly;
-          top: 6%;
-          position: relative;
-          opacity: 1;
-          right: 22%;
-          background-color: transparent;
-          padding: 1rem;
-          width: 25rem;
-          transition: all 1s ease;
-        }
       }
     }
-}
-.header__menu--button--burger::after{
-  content: '';
-  height: 10em;
-  width: 10em;
-  color: white;
-  background-color: yellow;
-}
+  }
 
+}
 
 .order{
-  width: 50%;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px hsla(0, 0%, 0%, .8);
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  margin-top: 3rem;
+
+  &__desc{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 6rem 2rem;
+    width: 100vw;
+    height: 50vh;
+    clip-path: polygon(0 0, 100% calc(0% + 10vw), 100% calc(100% - 5vw), 0 100%);
+    background-color: hsla(0, 0%, 60%, .5);
+
+    &--content{
+
+      }
+  }
+
+  &__container{
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px hsla(0, 0%, 0%, .8);
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   
   &__form{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50vh;
+    margin: 3rem 0;
     padding: 0 5em 3em;
 
     &--select{
-      width: 75%;
+      margin: .5rem 0;
+      width: 80%;
     }
   }
 }
 
 
-// .button{
-//   all: unset;
-//   border-radius: 10px;
-//   border: none;
-//   padding: 1rem 2rem;
-//   margin: 0;
-//   text-decoration: none;
-//   background: hsla(0, 75%, 35%, 0.65);
-//   border-color: hsla(0, 75%, 35%, 0.65);
-//   color: #ffffff;
-//   font-size: 1rem;
-//   cursor: pointer;
-//   text-align: center;
-// }
+.button{
+  all: unset;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: hsla(0, 75%, 35%, 0.65);
+  border-color: hsla(0, 75%, 35%, 0.65);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
 
-
-.container{
-  margin-top: 10em;
-  position: relative;
+.burger{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  width: 80px;
-  border: solid;
-  color: blue;
-  transition: all .5s ease-in-out;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  & div{
+    width: 2rem;
+    height: 0.1rem;
+    border-width: 1px;
+    border-radius: 10px;
+    border: white;
+    background-color: white;
+    border-style: solid;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
 }
 
-.link--burger{
-  position: relative;
-  // z-index: 1000;
-  width: 50px;
-  height: 10px;
-  border: solid;
-  color: red;
-  border-color: red;
-  border-radius: 5px;
-  transition: all .5s ease-in-out;
+.first{
+  transform: rotate(0);
+  transition: all 1s ease;
+  &--closed{
+    transform: rotate(45deg);
+  }
 }
+.second{
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease;
 
-.link--burger::before, .link--burger::after{
-  content: '';
-  position: absolute;
-  // z-index: 1000;
-  width: 50px;
-  height: 10px;
-  border: solid;
-  color: red;
-  border-color: red;
-  border-radius: 5px;
-  transition: all .5s ease-in-out;
+  &--closed{
+    opacity: 0;
+    transform: translateX(20px);
 
+  }
 }
+.third{
+  transform: rotate(0);
+  transition: all 1s ease;
 
-.link--burger::after{
-  transform: translate(-4px,-16px);
-}
-
-.link--burger::before{
-  transform: translate( -4px, 10px);
-
+  &--closed{
+    transform: rotate(-45deg);
+  }
 }

@@ -21,6 +21,7 @@
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   z-index: 0;
   opacity: .9;
+  margin-bottom: -10vw;
 
     &__title{
       background-color: hsla(39, 14%, 100%, .3);
@@ -123,18 +124,19 @@
 }
 
 .order{
-  margin-top: 3rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__desc{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem auto;
-    padding: 6rem 2rem;
+    margin: auto auto;
+    padding: 9rem 11rem;
     width: 100vw;
     height: 50vh;
-    clip-path: polygon(0 0, 100% calc(0% + 10vw), 100% calc(100% - 5vw), 0 100%);
+    clip-path: polygon(0 calc(0% + 10vw), 100% 0, 100% 100%, 0 92%);
     background-color: hsla(0, 0%, 60%, .5);
 
     &--content{
@@ -147,6 +149,7 @@
     border-radius: 10px;
     box-shadow: 10px 10px 10px hsla(0, 0%, 0%, .8);
     margin: 3rem auto;
+    padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -14,6 +14,7 @@ import {
   Link,
   Route
 } from 'react-router-dom'
+import UpdateProfile from './components/Authentication/UpdateProfile';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <AuthProvider>
         <Switch>
           <PrivateRoute exact path="/" component={DashBoard} />
+          <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/forgot-password" component={ForgotPassword} />

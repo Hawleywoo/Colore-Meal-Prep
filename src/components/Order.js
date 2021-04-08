@@ -7,7 +7,6 @@ function Order() {
     const [lowCarb, setlowCarb] = useState(false)
 
     const handleLowCarb = () => {
-        console.log(lowCarb)
         setlowCarb(!lowCarb)
     }
 

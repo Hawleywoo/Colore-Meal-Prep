@@ -6,7 +6,7 @@ import SignUp from './components/Authentication/SignUp';
 import DashBoard from './components/Dashboard'
 import Login from './components/Authentication/Login';
 import ForgotPassword from './components/Authentication/ForgotPassword';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/Authentication/PrivateRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import {
   BrowserRouter as Router,
@@ -32,7 +32,7 @@ function App() {
         <AuthProvider>
         <Switch>
           <PrivateRoute exact path="/" component={DashBoard} />
-          <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+          <PrivateRoute path="/update-profile" component={UpdateProfile} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/forgot-password" component={ForgotPassword} />

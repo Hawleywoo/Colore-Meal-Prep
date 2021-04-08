@@ -9,24 +9,35 @@ function UpdateProfile() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
-    const { currentUser } = useAuth()
+    const { currentUser, updatePassword, updateEmail } = useAuth()
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        setLoading(true)
+        setError('')
 
         if(passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError('Passwords do not match')
         }
 
-        try {
-            setError('')
-            setLoading(true)
-            // await signUp(emailRef.current.value, passwordRef.current.value)
-            history.push('/')
-        } catch {
-            setError('Failed to Sign up')
+        const promises = []
+
+        if (emailRef.current.value !== currentUser.email) {
+            promises.push(updateEmail(emailRef.current.value))
         }
-        setLoading(false)
+
+        if (passwordRef.current.value) {
+            promises.push(updatePassword(passwordRef.current.value))
+        }
+
+        Promise.all(promises)
+            .then(()=> {
+                history.push('/')
+            }).catch(()=> {
+                setError('Failed to update account')
+            }).finally(()=> {
+                setLoading(false)
+            })
     }
 
     return (
@@ -37,9 +48,9 @@ function UpdateProfile() {
                 <label>Username:</label>
                 <input ref={emailRef} defaultValue={currentUser.email} required/>
                 <label>Password:</label>
-                <input ref={passwordRef} placeholder="Leave blank to keep the same" required/>
+                <input ref={passwordRef} placeholder="Leave blank to keep the same"/>
                 <label> Confirm Password:</label>
-                <input ref={passwordConfirmRef} placeholder="Leave blank to keep the same" required/>
+                <input ref={passwordConfirmRef} placeholder="Leave blank to keep the same" />
                 <input disabled={loading} type="submit" placeholder="Update"/>
             </form>
             <div><Link to="/" >Cancel</Link> </div>

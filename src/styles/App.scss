@@ -237,3 +237,22 @@
     transform: rotate(-45deg);
   }
 }
+
+.dashboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__my-orders{
+
+
+    &__meals-container{
+
+      &__meal{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
